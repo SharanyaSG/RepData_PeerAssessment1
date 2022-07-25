@@ -75,6 +75,7 @@ the dataset.
 ``` r
 Total_Steps <- aggregate(steps~date,Data_Activity,sum,na.rm=TRUE)
 ```
+![Screen Shot 2022-07-24 at 9 39 22 PM](https://user-images.githubusercontent.com/106842913/180677068-12c0cb3a-6087-42c2-ac53-2954de2e1328.png)
 
 ### 3.2. Histogram of the total steps taken per day
 
