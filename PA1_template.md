@@ -75,7 +75,6 @@ the dataset.
 ``` r
 Total_Steps <- aggregate(steps~date,Data_Activity,sum,na.rm=TRUE)
 ```
-![Screen Shot 2022-07-24 at 9 39 22 PM](https://user-images.githubusercontent.com/106842913/180677068-12c0cb3a-6087-42c2-ac53-2954de2e1328.png)
 
 ### 3.2. Histogram of the total steps taken per day
 
@@ -83,7 +82,8 @@ Total_Steps <- aggregate(steps~date,Data_Activity,sum,na.rm=TRUE)
 hist(Total_Steps$steps,main = "DAILY STEP COUNT", xlab = "Total steps/day", col = "lightblue",border="black", ylim = c(0,20), breaks = seq(0,25000, by=2500))
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-3-1.png)
+![Screen Shot 2022-07-24 at 9 39 22 PM](https://user-images.githubusercontent.com/106842913/180677068-12c0cb3a-6087-42c2-ac53-2954de2e1328.png)
+
 
 ## 3.3. Mean and Median of the total number of steps taken per day
 
@@ -118,8 +118,8 @@ median(Total_Steps$steps)
 Total_Steps <- aggregate(steps~interval,Data_Activity,mean,na.rm=T)
 plot(Total_Steps$interval,Total_Steps$steps, type='l',col ="maroon",lwd=2,main="DAILY AVERAGE ACTIVITY PATTERN",xlab="Intervals (5 mins.)",ylab="Step Average")
 ```
+![Screen Shot 2022-07-24 at 9 41 33 PM](https://user-images.githubusercontent.com/106842913/180677257-96615352-0fdd-41e9-a714-683ae10cf7b2.png)
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
 ### 4.2. 5-minute Interval that contains the Maximum Number of Steps, on average across all the days in the dataset
 
@@ -180,8 +180,8 @@ part of this step.
 ``` r
 hist(New_Total_Steps$steps,main='TOTAL STEPS/DAY',xlab = 'Steps/Day', col = "pink",border="black")
 ```
+![Screen Shot 2022-07-24 at 9 42 01 PM](https://user-images.githubusercontent.com/106842913/180677289-6edc9bce-b03c-48f7-b9bd-8ae515249bc7.png)
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-11-1.png)
 
 ``` r
 mean(New_Total_Steps$steps)
@@ -247,5 +247,6 @@ Data_Activity_DT[is.na(steps), "steps"] <- Data_Activity_DT[, c(lapply(.SD, medi
 intervals <- Data_Activity_DT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("steps"), by = .(interval, `WEEKDAY/WEEKEND`)] 
 ggplot(intervals , aes(x = interval , y = steps)) + geom_line(stat = 'identity',col="blue") + labs( x = "Interval", y = "No. of Steps") +  facet_wrap(~`WEEKDAY/WEEKEND` , ncol = 1, nrow=2)
 ```
+![Screen Shot 2022-07-24 at 9 42 28 PM](https://user-images.githubusercontent.com/106842913/180677318-6d99db8b-ef67-465d-8836-3a7c5eccfb47.png)
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-13-1.png)
+
